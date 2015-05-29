@@ -19,16 +19,17 @@ set smartcase       " Do smart case matching
 set nu
 set tabstop=4
 set softtabstop=4
-" set shiftwidth=4
+"set shiftwidth=4
 set expandtab           " use whitespace instead of tab
 set autoindent
 set smartindent
 set cindent shiftwidth=4
-" set autoindent shiftwidth=4
+"set autoindent shiftwidth=4
 "set foldmethod=indent
 set backspace=indent,eol,start
 set colorcolumn=80
  
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
  
 " === tagbar setting =======
 nmap <F4> :TagbarToggle<CR>   " shortcut
@@ -95,6 +96,10 @@ autocmd VimEnter * wincmd w
 map <C-m> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let NERDTreeIgnore=['\.pyc', '\.pyo', '\.swp', '\~'] " ignore *.py[co], *.swp and *~
+
+" pydiction
+let g:pydiction_location = '/home/gbs/.vim/bundle/pydiction/complete-dict'
+let g:pydiction_menu_height = 3
  
 " Source a global configuration file if available
 if filereadable("/etc/vim/vimrc.local")
