@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/gbs/obs_test/photos'
-let g:netrw_dirhist_2='/home/gbs/gbs_imagebuild'
-let g:netrw_dirhist_3='/home/gbs/gbs_imagebuild/dev_branch_appframework'
-let g:netrw_dirhist_4='/home/gbs/gbs_imagebuild'
-let g:netrw_dirhist_5='/home/gbs/gbs_imagebuild/make_w301'
-let g:netrw_dirhist_6='/home/gbs/.vim'
-let g:netrw_dirhist_7='/home/gbs/.vim/bundle/nerdtree/autoload/nerdtree'
