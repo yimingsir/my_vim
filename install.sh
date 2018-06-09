@@ -1,6 +1,7 @@
 #!/bin/bash
 vundle_git=https://github.com/VundleVim/Vundle.vim.git
 bundle_path=~/.vim/bundle
+self_path=$(dirname `readlink -f $0`)
 
 function pre_install()
 {
@@ -47,6 +48,15 @@ function main()
     ret=$?
     if [$ret -ne 0]; then
         echo "Error, clone vundle resposity fail"
+        exit 1
+    fi
+
+    echo "Copy vimrc..."
+    [ -f ~/.vimrc ] && cp ~/.vimrc ~/.vimrc.backup
+    cp $self_path/vimrc ~/.vimrc
+    ret=$?
+    if [$ret -ne 0]; then
+        echo "Error, copy vimrc fail"
         exit 1
     fi
 
